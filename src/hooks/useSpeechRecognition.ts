@@ -9,10 +9,13 @@ interface UseSpeechRecognitionReturn {
   resetTranscript: () => void
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type AnySpeechRecognition = any
+
 export function useSpeechRecognition(): UseSpeechRecognitionReturn {
   const [transcript, setTranscript] = useState('')
   const [isListening, setIsListening] = useState(false)
-  const recRef = useRef<SpeechRecognition | null>(null)
+  const recRef = useRef<AnySpeechRecognition>(null)
 
   const supported =
     typeof window !== 'undefined' &&
@@ -21,13 +24,15 @@ export function useSpeechRecognition(): UseSpeechRecognitionReturn {
   const startListening = useCallback(() => {
     if (!supported) return
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const SR: typeof SpeechRecognition = (window as any).SpeechRecognition ?? (window as any).webkitSpeechRecognition
+    const SR = (window as any).SpeechRecognition ?? (window as any).webkitSpeechRecognition
     const rec = new SR()
     rec.lang = 'pt-BR'
     rec.continuous = true
     rec.interimResults = true
-    rec.onresult = (e) => {
-      const text = Array.from(e.results).map((r) => r[0].transcript).join('')
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    rec.onresult = (e: any) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const text = Array.from(e.results).map((r: any) => r[0].transcript).join('')
       setTranscript(text)
     }
     rec.onerror = () => setIsListening(false)
