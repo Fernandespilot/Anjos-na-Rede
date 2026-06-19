@@ -99,6 +99,13 @@ export default function AgentChat() {
   // Histórico para enviar ao Groq (só mensagens de texto, sem actions)
   const history = useRef<{ role: string; content: string }[]>([])
 
+  // Abre o chat ao receber evento do botão "Quero Conversar"
+  useEffect(() => {
+    const handler = () => setOpen(true)
+    window.addEventListener('open-agent-chat', handler)
+    return () => window.removeEventListener('open-agent-chat', handler)
+  }, [])
+
   useEffect(() => {
     if (transcript) setInput(transcript)
   }, [transcript])

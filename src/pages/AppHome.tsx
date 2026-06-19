@@ -3,6 +3,11 @@ import { useNavigate } from 'react-router-dom'
 import Modal from '../components/Modal'
 import Toast from '../components/Toast'
 
+// Evento customizado para abrir o AgentChat de qualquer tela
+export function openAgentChat() {
+  window.dispatchEvent(new CustomEvent('open-agent-chat'))
+}
+
 export default function AppHome() {
   const navigate = useNavigate()
   const [chatModal, setChatModal] = useState(false)
@@ -17,7 +22,7 @@ export default function AppHome() {
         <Modal title="💬 Quero Conversar" onClose={() => setChatModal(false)}>
           <p className="text-body-md text-on-surface-variant mb-6">Como prefere conversar com nosso Anjo da Rede?</p>
           <div className="space-y-3">
-            <button onClick={() => { setChatModal(false); setToast({ msg: 'Conectando ao chat de texto... aguarde!', type: 'info' }) }}
+            <button onClick={() => { setChatModal(false); openAgentChat() }}
               className="w-full flex items-center gap-4 p-4 bg-sky-blue-light rounded-[1.5rem] hover:bg-primary-container transition-all active:scale-95">
               <span className="material-symbols-outlined text-primary fill-icon text-3xl">chat</span>
               <div className="text-left">
