@@ -100,8 +100,8 @@ export default function AppHome() {
               onClick={() => setChatModal(true)}
               className="group flex flex-col items-start gap-4 p-7 lg:p-8 neomorphic-card rounded-[2rem] border-4 border-transparent hover:border-secondary-container transition-all active:scale-95 text-left"
             >
-              <div className="w-16 h-16 lg:w-20 lg:h-20 bg-gold-soft rounded-[1.5rem] flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm">
-                <span className="text-4xl lg:text-5xl">💛</span>
+              <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-[1.5rem] overflow-hidden group-hover:scale-110 transition-transform shadow-sm">
+                <img src="/quero conversar.png" alt="Quero Conversar" className="w-full h-full object-cover" />
               </div>
               <div>
                 <h2 className="font-headline-md text-headline-md text-on-surface mb-1">Quero Conversar</h2>
@@ -117,8 +117,8 @@ export default function AppHome() {
               onClick={() => navigate('/app/relato/agora')}
               className="group flex flex-col items-start gap-4 p-7 lg:p-8 neomorphic-card rounded-[2rem] border-4 border-transparent hover:border-primary-container transition-all active:scale-95 text-left"
             >
-              <div className="w-16 h-16 lg:w-20 lg:h-20 bg-sky-blue-light rounded-[1.5rem] flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm">
-                <span className="text-4xl lg:text-5xl">📣</span>
+              <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-[1.5rem] overflow-hidden group-hover:scale-110 transition-transform shadow-sm">
+                <img src="/relato.png" alt="Relatar Algo" className="w-full h-full object-cover" />
               </div>
               <div>
                 <h2 className="font-headline-md text-headline-md text-on-surface mb-1">Relatar Algo</h2>
@@ -134,8 +134,8 @@ export default function AppHome() {
               onClick={() => navigate('/app/direitos')}
               className="group flex flex-col items-start gap-4 p-7 lg:p-8 neomorphic-card rounded-[2rem] border-4 border-transparent hover:border-safety-green transition-all active:scale-95 text-left sm:col-span-2 lg:col-span-1"
             >
-              <div className="w-16 h-16 lg:w-20 lg:h-20 bg-safety-green/30 rounded-[1.5rem] flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm">
-                <span className="text-4xl lg:text-5xl">📚</span>
+              <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-[1.5rem] overflow-hidden group-hover:scale-110 transition-transform shadow-sm">
+                <img src="/meus direitos.png" alt="Meus Direitos" className="w-full h-full object-cover" />
               </div>
               <div>
                 <h2 className="font-headline-md text-headline-md text-on-surface mb-1">Meus Direitos</h2>
