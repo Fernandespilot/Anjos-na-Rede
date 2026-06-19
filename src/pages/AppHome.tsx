@@ -81,8 +81,13 @@ export default function AppHome() {
               </p>
             </div>
             <div className="lg:flex-none text-center">
-              <div className="inline-flex items-center justify-center w-40 h-40 lg:w-56 lg:h-56 bg-white/40 backdrop-blur-sm rounded-full shadow-xl animate-floating">
-                <span className="text-8xl lg:text-9xl">🕊️</span>
+              <div className="w-40 h-40 lg:w-56 lg:h-56 rounded-full shadow-xl animate-floating overflow-hidden bg-white/20 backdrop-blur-sm">
+                <img
+                  src="/anjo.png"
+                  alt="Anjo da Rede"
+                  className="w-full h-full object-cover object-center scale-[1.12]"
+                  style={{ objectPosition: '50% 40%' }}
+                />
               </div>
             </div>
           </div>
